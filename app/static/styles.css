@@ -1,58 +1,141 @@
-/* Sobrescrevendo as variáveis padrão do Bootstrap */
-:root {
-    --bs-primary: #002F6C; /* Azul escuro Marista */
-    --bs-secondary: #6C757D; /* Cinza complementar */
-    --bs-success: #FFC107; /* Amarelo suave */
-    --bs-info: #00AEEF; /* Azul claro (destaque secundário) */
-    --bs-light: #F8F9FA; /* Cinza claro (background leve) */
-    --bs-dark: #343A40; /* Cinza escuro */
+/* Reset básico */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo Global */
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    background-color: var(--bs-light);
-    color: var(--bs-dark);
     line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333333;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--bs-primary);
-    font-weight: 600;
+/* Estilo da Seção de Boas-vindas */
+.text-center {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.text-center img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-center h1 {
+    font-size: 2.5rem;
+    color: #002F6C;
+    margin-top: 1rem;
+}
+
+.text-center p {
+    font-size: 1.2rem;
+    color: #555555;
+    margin-top: 0.5rem;
+}
+
+/* Seção Importância */
+.importance-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.importance-section h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #002F6C;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.importance-section h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #00509E;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.importance-section p {
+    font-size: 1.1rem;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.intro {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.food-groups {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.food-groups li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.food-groups li strong {
+    color: #002F6C;
 }
 
 /* Navbar */
 .navbar {
-    background-color: var(--bs-primary);
+    background-color: #002F6C;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
-    color: white;
+    color: white !important;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .nav-link:hover {
-    color: var(--bs-info);
-    transition: color 0.3s ease-in-out;
-}
-
-/* Botões */
-.btn-success {
-    background-color: var(--bs-success);
-    border-color: var(--bs-success);
-    color: white;
-}
-
-.btn-success:hover {
-    background-color: var(--bs-primary);
-    border-color: var(--bs-primary);
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: #80C1E3 !important;
 }
 
 /* Rodapé */
 footer {
-    background-color: var(--bs-primary);
+    background-color: #002F6C;
     color: white;
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Botões */
+.btn-success {
+    background-color: #002F6C;
+    border-color: #002F6C;
+    color: white;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #00509E;
+    border-color: #00509E;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .text-center h1 {
+        font-size: 2rem;
+    }
+    .importance-section {
+        padding: 1.5rem;
+    }
+    .importance-section h1, .importance-section h2 {
+        font-size: 1.5rem;
+    }
 }
