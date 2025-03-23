@@ -1,0 +1,58 @@
+/* Sobrescrevendo as variáveis padrão do Bootstrap */
+:root {
+    --bs-primary: #002F6C; /* Azul escuro Marista */
+    --bs-secondary: #6C757D; /* Cinza complementar */
+    --bs-success: #FFC107; /* Amarelo suave */
+    --bs-info: #00AEEF; /* Azul claro (destaque secundário) */
+    --bs-light: #F8F9FA; /* Cinza claro (background leve) */
+    --bs-dark: #343A40; /* Cinza escuro */
+}
+
+/* Estilo Global */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--bs-light);
+    color: var(--bs-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--bs-primary);
+    font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--bs-primary);
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: var(--bs-info);
+    transition: color 0.3s ease-in-out;
+}
+
+/* Botões */
+.btn-success {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--bs-primary);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}

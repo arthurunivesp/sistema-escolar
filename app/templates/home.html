@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logotipo dos Colégios Maristas" height="100" class="mb-4">
+    <h1 class="text-primary">Bem-vindo ao Sistema Escolar</h1>
+    <p>Use o menu acima para acessar as funcionalidades.</p>
+</div>
+{% endblock %}
