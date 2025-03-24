@@ -127,6 +127,32 @@ footer {
     border-color: #00509E;
 }
 
+/* Estilo para Abas */
+.nav-tabs {
+    border-bottom: 2px solid #dddddd;
+}
+
+.nav-tabs .nav-link {
+    font-weight: bold;
+    color: #002F6C; /* Azul escuro padrão */
+    background: transparent;
+    border: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #002F6C; /* Azul escuro para aba ativa */
+    color: rgb(249, 249, 252) !important;
+    border-radius: 5px 5px 0 0;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #00509E; /* Azul mais claro no hover */
+    background-color: #E5F3FF; /* Suave mudança de fundo */
+}
+
+
+
 /* Responsividade */
 @media (max-width: 768px) {
     .text-center h1 {

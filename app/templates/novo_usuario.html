@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Criação de Novo Usuário{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center text-primary">Criação de Novo Usuário</h1>
+    <p class="text-center">Preencha as informações para criar uma nova conta.</p>
+
+    <!-- Formulário de Novo Usuário -->
+    <form method="POST" action="{{ url_for('main.novo_usuario') }}" class="p-4 shadow rounded mx-auto" style="width: 100%; max-width: 400px; background-color: #f9f9f9;" id="registerForm">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome Completo:</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Insira seu nome completo" required>
+        </div>
+        <div class="mb-3">
+            <label for="birthdate" class="form-label">Data de Nascimento:</label>
+            <input type="date" id="birthdate" name="birthdate" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Insira seu email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Senha:</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Crie uma senha" required>
+            <small class="form-text text-muted">A senha deve ter no mínimo 8 caracteres, incluindo uma maiúscula, uma minúscula, um número e um caractere especial.</small>
+        </div>
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirme a Senha:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Digite a senha novamente" required>
+        </div>
+        <div class="mb-3">
+            <label for="role" class="form-label">Função:</label>
+            <select id="role" name="role" class="form-select" required>
+                <option value="admin">Administrador do Sistema</option>
+                <option value="responsavel">Responsável pela Alimentação</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Criar Usuário</button>
+        <p id="passwordError" class="text-danger text-center mt-3" style="display: none;"></p>
+    </form>
+</div>
+
+<script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        const passwordError = document.getElementById("passwordError");
+
+        // Regex para validação da senha
+        const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+
+        // Limpar mensagens de erro anteriores
+        passwordError.style.display = "none";
+        passwordError.textContent = "";
+
+        if (!passwordRegex.test(password)) {
+            event.preventDefault();
+            passwordError.style.display = "block";
+            passwordError.textContent = "A senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caractere especial.";
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            event.preventDefault();
+            passwordError.style.display = "block";
+            passwordError.textContent = "As senhas não coincidem. Tente novamente.";
+        }
+    });
+</script>
+{% endblock %}
